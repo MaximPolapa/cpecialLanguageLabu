@@ -1,5 +1,4 @@
 import math
-
 class Memory:
     def __init__(self):
         self.memory = []
@@ -24,48 +23,46 @@ def calculate(num1, num2, operator):
         if num2 != 0:
             return num1 / num2
         else:
-            return "Помилка: ділення на нуль"
+            return "Error: division on zero"
     elif operator == '^':
         return num1 ** num2
     elif operator == '√':
         if num1 >= 0:
             return math.sqrt(num1)
         else:
-            return "Помилка: від'ємне число під коренем"
+            return "Error: negative number under the root"
     elif operator == '%':
         if num2 != 0:
             return num1 % num2
         else:
-            return "Помилка: ділення на нуль"
+            return "Error: division on zero"
     else:
-        return "Помилка: недійсний оператор"
+        return "Error: messing operator, try again"
 
 memory = Memory()
 
 while True:
     try:
-        num1 = float(input("Введіть перше число: "))
-        num2 = float(input("Введіть друге число: "))
+        num1 = float(input("First number: "))
+        num2 = float(input("Secons number: "))
     except ValueError:
-        print("Помилка: Ви вказали не число. Будь ласка, введіть число 1 або 2.")
+        print("Error: it`s wrote not number, try again")
         continue
 
     while True:
-        operator = input("Введіть оператор (+, -, *, /, ^, √, %): ")
+        operator = input("Choose operator (+, -, *, /, ^, √, %): ")
         if operator in ['+', '-', '*', '/', '^', '√', '%']:
             result = calculate(num1, num2, operator)
-            print(f"Результат: {result}")
-
+            print(f"Result: {result}")
             memory.store(f"{num1} {operator} {num2}", result)
             break
         else:
-            print("Помилка: недійсний оператор. Будь ласка, введіть один із +, -, *, /, ^, √, %.")
+            print("Error: bad operator. Please, choose on of this operator '+, -, *, /, ^, √, %' ")
 
     memory_values = memory.recall()
-    print(f"Значення в пам'яті:")
+    print(f"Memory operator:")
     for expression, result in memory_values:
         print(f"{expression} = {result}")
-
-    repeat = input("Бажаєте виконати ще одне обчислення? (так/ні): ")
-    if repeat.lower() != 'так':
+    repeat = input("Do you want continued? (yes/no): ")
+    if repeat.lower() != 'yes':
         break
