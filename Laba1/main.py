@@ -42,7 +42,7 @@ while True:
     while True:
         operator = input("Choose operator (+, -, *, /, ^, √, %): ") #operator
         if operator in ['+', '-', '*', '/', '^', '√', '%']: #find which operator was change
-            result = calculate(num1, num2, operator)
+            result = calculate(num1, num2, operator) #variable result
             print(f"Result: {result}")
             memory.store(f"{num1} {operator} {num2}", result)
             break
