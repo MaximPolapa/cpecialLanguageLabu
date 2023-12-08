@@ -24,7 +24,7 @@ class Calculator:
         '*': lambda num1, num2: num1 * num2,
         '/': lambda num1, num2: num1 / num2 if num2 != 0 else _("Error: division on zero"),
         '^': lambda num1, num2: num1 ** num2,
-        '√': lambda num1, _: math.sqrt(num1) if num1 >= 0 else _("Error: negative number under the root"),
+        '√': lambda num1, _: math.sqrt(num1) if num1 >= 0 else "Error: negative number under the root",
         '%': lambda num1, num2: num1 % num2 if num2 != 0 else _("Error: division on zero")
     }
 
@@ -32,15 +32,17 @@ class Calculator:
         self.memory = Memory()
         self.locale = locale
 
-    #throws value exception if user input not float numberS
-    def get_input(self, prompt_key):
-        return float(input(questions[self.locale][prompt_key]))
-            
+    def get_float_input(self, prompt_key):
+        while True:
+            try:
+                return float(input(questions[self.locale][prompt_key]))
+            except ValueError:
+                print(_("Error: Invalid input, please enter a valid number."))
 
     def run(self):
         while True:
-            num1 = self.get_input('first_number')
-            num2 = self.get_input('second_number')
+            num1 = self.get_float_input('first_number')
+            num2 = self.get_float_input('second_number')
 
             operator = input(questions[self.locale]['operator'])
             if operator in Calculator.OPERATORS:
