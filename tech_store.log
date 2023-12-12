@@ -1,0 +1,2 @@
+2023-12-08 13:43:53,324 - ERROR: API request error: 404 Client Error: Not Found for url: https://example.com/api/products
+2023-12-08 13:43:59,458 - ERROR: API request error: 404 Client Error: Not Found for url: https://example.com/api/products
