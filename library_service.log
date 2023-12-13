@@ -1,0 +1,73 @@
+2023-12-13 14:05:28,889 - Application started
+2023-12-13 14:05:28,889 - MenuFacade instance created
+2023-12-13 14:05:28,889 - Menu item 'Calculator' added
+2023-12-13 14:05:28,889 - Menu item 'OOP Calculator' added
+2023-12-13 14:05:28,889 - Menu item 'ASCII Art' added
+2023-12-13 14:05:28,889 - Menu item '2D ASCII Art without additional libraries' added
+2023-12-13 14:05:28,889 - Menu item '3D ASCII Arts' added
+2023-12-13 14:05:28,889 - Menu item 'Unit tests' added
+2023-12-13 14:05:28,889 - Menu item 'API requests' added
+2023-12-13 14:05:28,889 - Menu item 'CSV File' added
+2023-12-13 14:05:28,889 - Displaying menu
+2023-12-13 14:05:31,145 - Application finished
+2023-12-13 14:06:34,420 - Application started
+2023-12-13 14:06:34,420 - MenuFacade instance created
+2023-12-13 14:06:34,420 - Menu item 'Calculator' added
+2023-12-13 14:06:34,420 - Menu item 'OOP Calculator' added
+2023-12-13 14:06:34,420 - Menu item 'ASCII Art' added
+2023-12-13 14:06:34,420 - Menu item '2D ASCII Art without additional libraries' added
+2023-12-13 14:06:34,420 - Menu item '3D ASCII Arts' added
+2023-12-13 14:06:34,420 - Menu item 'Unit tests' added
+2023-12-13 14:06:34,420 - Menu item 'API requests' added
+2023-12-13 14:06:34,420 - Menu item 'CSV File' added
+2023-12-13 14:06:34,420 - Displaying menu
+2023-12-13 14:06:36,677 - Application finished
+2023-12-13 14:07:27,930 - Application started
+2023-12-13 14:07:27,930 - MenuFacade instance created
+2023-12-13 14:07:27,934 - Menu item 'Calculator' added
+2023-12-13 14:07:27,934 - Menu item 'OOP Calculator' added
+2023-12-13 14:07:27,934 - Menu item 'ASCII Art' added
+2023-12-13 14:07:27,934 - Menu item '2D ASCII Art without additional libraries' added
+2023-12-13 14:07:27,934 - Menu item '3D ASCII Arts' added
+2023-12-13 14:07:27,934 - Menu item 'Unit tests' added
+2023-12-13 14:07:27,934 - Menu item 'API requests' added
+2023-12-13 14:07:27,934 - Menu item 'CSV File' added
+2023-12-13 14:07:27,934 - Displaying menu
+2023-12-13 14:07:29,953 - Application finished
+2023-12-13 14:10:26,815 - Application started
+2023-12-13 14:10:26,815 - MenuFacade instance created
+2023-12-13 14:10:26,815 - Menu item 'Calculator' added
+2023-12-13 14:10:26,815 - Menu item 'OOP Calculator' added
+2023-12-13 14:10:26,815 - Menu item 'ASCII Art' added
+2023-12-13 14:10:26,815 - Menu item '2D ASCII Art without additional libraries' added
+2023-12-13 14:10:26,815 - Menu item '3D ASCII Arts' added
+2023-12-13 14:10:26,815 - Menu item 'Unit tests' added
+2023-12-13 14:10:26,815 - Menu item 'API requests' added
+2023-12-13 14:10:26,815 - Menu item 'CSV File' added
+2023-12-13 14:10:26,815 - Displaying menu
+2023-12-13 14:10:38,312 - Application finished
+2023-12-13 14:14:12,715 - Application started
+2023-12-13 14:14:12,715 - MenuFacade instance created
+2023-12-13 14:14:12,715 - Menu item 'Calculator' added
+2023-12-13 14:14:12,719 - Menu item 'OOP Calculator' added
+2023-12-13 14:14:12,719 - Menu item 'ASCII Art' added
+2023-12-13 14:14:12,719 - Menu item '2D ASCII Art without additional libraries' added
+2023-12-13 14:14:12,719 - Menu item '3D ASCII Arts' added
+2023-12-13 14:14:12,719 - Menu item 'Unit tests' added
+2023-12-13 14:14:12,719 - Menu item 'API requests' added
+2023-12-13 14:14:12,719 - Menu item 'CSV File' added
+2023-12-13 14:14:12,719 - Displaying menu
+2023-12-13 14:14:15,283 - Application finished
+2023-12-13 14:27:41,367 - Application started
+2023-12-13 14:27:41,367 - MenuFacade instance created
+2023-12-13 14:27:41,367 - Menu item 'Calculator' added
+2023-12-13 14:27:41,367 - Menu item 'OOP Calculator' added
+2023-12-13 14:27:41,367 - Menu item 'ASCII Art' added
+2023-12-13 14:27:41,367 - Menu item '2D ASCII Art without additional libraries' added
+2023-12-13 14:27:41,367 - Menu item '3D ASCII Arts' added
+2023-12-13 14:27:41,367 - Menu item 'Unit tests' added
+2023-12-13 14:27:41,367 - Menu item 'API requests' added
+2023-12-13 14:27:41,367 - Menu item 'CSV File' added
+2023-12-13 14:27:41,367 - Displaying menu
+2023-12-13 14:27:45,582 - Error in type of number
+2023-12-13 14:27:54,567 - Application finished

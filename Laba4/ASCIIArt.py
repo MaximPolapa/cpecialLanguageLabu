@@ -1,7 +1,8 @@
-from symbol import ascii_chars
+from .symbol import ascii_chars
 from termcolor import colored
 import os
 import sys
+import logging
 
 class ASCIIArt:
     def __init__(self, text, width, height, color):
@@ -29,4 +30,5 @@ class ASCIIArt:
     def save(self, ascii_art):
         with open('figure.txt', 'w') as file:
             file.write(ascii_art)
+            logging.info("File is save")
             print("ASCII-арт збережено у файл 'figure.txt'.")

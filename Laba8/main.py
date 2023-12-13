@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import logging
 
 class DataVisualizer:
     def __init__(self, csv_file):
@@ -11,6 +12,7 @@ class DataVisualizer:
     def plot_line_chart(self, x, y):
         if x not in self.data.columns or y not in self.data.columns:
             print(f"Стовпці '{x}' або '{y}' не знайдені у датафреймі.")
+            logging.info("ERROR Стовпці '{x}' або '{y}' не знайдені у датафреймі.")
             return
         plt.plot(self.data[x], self.data[y])
         plt.xlabel(x)
@@ -43,16 +45,31 @@ visualizer = DataVisualizer('D:/My_Project/Python/Labu/Laba8/table.csv')
 print(visualizer.describe_data())
 
 def main():
-    plt.figure()
-    visualizer.plot_line_chart('Score', 'Year')
-    plt.show()
-
-    plt.figure()
-    visualizer.plot_bar_chart('Score', 'Year')
-    plt.show()
-
-    fig = visualizer.multiple_subplots('Score', 'Year')
-    fig.savefig('my_visualization.png')
+    plt.ion()
     
+    visualizer = DataVisualizer('D:/My_Project/Python/Labu/Laba8/table.csv')
+    print(visualizer.describe_data())
+
+    def plot_line_chart():
+        plt.figure()
+        visualizer.plot_line_chart('Score', 'Year')
+        plt.show()
+
+    def plot_bar_chart():
+        plt.figure()
+        visualizer.plot_bar_chart('Score', 'Year')
+        plt.show()
+
+    def save_multiple_subplots():
+        fig = visualizer.multiple_subplots('Score', 'Year')
+        fig.savefig('my_visualization.png')
+
+    # Тепер викликаємо функції візуалізації
+    plot_line_chart()
+    plot_bar_chart()
+    save_multiple_subplots()
+    
+    plt.ioff() 
+
 if __name__ == '__main__':
     main()

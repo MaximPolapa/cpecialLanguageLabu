@@ -1,8 +1,8 @@
-from symbol import ascii_chars
+from .symbol import ascii_chars
 from termcolor import colored
 import os
 import sys
-from ASCIIArt import ASCIIArt
+from .ASCIIArt import ASCIIArt
 
 class ASCIIArtApp:
     def __init__(self):
@@ -31,5 +31,8 @@ class ASCIIArtApp:
 
             os.system('cls' if os.name == 'nt' else 'clear')
 
-if __name__ == "__main__":
+def main():
     app = ASCIIArtApp()
+
+if __name__ == "__main__":
+    main()

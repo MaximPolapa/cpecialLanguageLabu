@@ -1,6 +1,7 @@
 import math
 import gettext
 import locale
+import logging
 
 # Memory class for storing user inputs and results
 class Memory:
@@ -18,43 +19,40 @@ class Memory:
 
 # Calculator class for performing calculations
 class Calculator:
-    OPERATORS = {
-        '+': lambda num1, num2: num1 + num2,
-        '-': lambda num1, num2: num1 - num2,
-        '*': lambda num1, num2: num1 * num2,
-        '/': lambda num1, num2: num1 / num2 if num2 != 0 else _("Error: division on zero"),
-        '^': lambda num1, num2: num1 ** num2,
-        '√': lambda num1, _: math.sqrt(num1) if num1 >= 0 else "Error: negative number under the root",
-        '%': lambda num1, num2: num1 % num2 if num2 != 0 else _("Error: division on zero")
-    }
-
-    def __init__(self, locale):
+    def __init__(self, locale, gettext_func):
         self.memory = Memory()
         self.locale = locale
+        self._ = gettext_func  # Зберігаємо функцію локалізації як атрибут класу
+        self.OPERATORS = {
+            '+': lambda num1, num2: num1 + num2,
+            '-': lambda num1, num2: num1 - num2,
+            '*': lambda num1, num2: num1 * num2,
+            '/': lambda num1, num2: num1 / num2 if num2 != 0 else self._("Error: division on zero"),
+            '^': lambda num1, num2: num1 ** num2,
+            '√': lambda num1, _: math.sqrt(num1) if num1 >= 0 else self._("Error: negative number under the root"),
+            '%': lambda num1, num2: num1 % num2 if num2 != 0 else self._("Error: division on zero")
+        }
 
-    def get_float_input(self, prompt_key):
-        while True:
-            try:
-                return float(input(questions[self.locale][prompt_key]))
-            except ValueError:
-                print(_("Error: Invalid input, please enter a valid number."))
+    def get_input(self, prompt_key):
+        return float(input(questions[self.locale][prompt_key]))
 
     def run(self):
         while True:
-            num1 = self.get_float_input('first_number')
-            num2 = self.get_float_input('second_number')
+            num1 = self.get_input('first_number')
+            num2 = self.get_input('second_number')
 
             operator = input(questions[self.locale]['operator'])
-            if operator in Calculator.OPERATORS:
-                result = Calculator.OPERATORS[operator](num1, num2)
-                print(_("Result:"), result)
+            if operator in self.OPERATORS:
+                result = self.OPERATORS[operator](num1, num2)
+                print(self._("Result:"), result)
                 expression = f"{num1} {operator} {num2}"
                 self.memory.store(expression, result)
             else:
-                print(_("Error: Invalid operator. Please choose one of these operators: '+, -, *, /, ^, √, %' "))
+                print(self._("Error: Invalid operator. Please choose one of these operators: '+, -, *, /, ^, √, %' "))
+                logging.info("ERROR Invalid operator.")
 
             memory_values = self.memory.recall()
-            print(_("Memory operator:"))
+            print(self._("Memory operator:"))
             for expression, result in memory_values:
                 print(f"{expression} = {result}")
 
@@ -76,10 +74,6 @@ def choose_language():
         print("Непідтримувана мова, обрана українська.")
         return 'uk_UA'
 
-# Localization function based on the selected language
-selected_locale = choose_language()
-_ = gettext.translation('calculator', localedir='locales', languages=[selected_locale], fallback=True).gettext
-
 # Dictionary for localized prompts and messages
 questions = {
     'en_US': {
@@ -96,6 +90,11 @@ questions = {
     }
 }
 
-if __name__ == "__main__":
-    calculator = Calculator(selected_locale)
+def main():
+    selected_locale = choose_language()
+    gettext_func = gettext.translation('calculator', localedir='locales', languages=[selected_locale], fallback=True).gettext
+    calculator = Calculator(selected_locale, gettext_func)
     calculator.run()
+
+if __name__ == "__main__":
+    main()

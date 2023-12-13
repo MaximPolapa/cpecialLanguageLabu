@@ -1,9 +1,9 @@
 import unittest
-from calculator import Calculator  
+from .calculator import Calculator
 
 class TestCalculator(unittest.TestCase):
     def setUp(self):
-        self.calc = Calculator('en_US')  
+        self.calc = Calculator('en_US', lambda x: x)  # Додайте функцію локалізації 
 
     def test_addition(self):
         result = self.calc.OPERATORS['+'](10, 5)
@@ -38,5 +38,9 @@ class TestCalculator(unittest.TestCase):
         result = self.calc.OPERATORS['%'](10, 0)
         self.assertEqual(result, "Error: division on zero")
 
-if __name__ == '__main__':
+def main():
     unittest.main()
+
+
+if __name__ == '__main__':
+    main()

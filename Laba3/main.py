@@ -1,5 +1,6 @@
 import art
 from termcolor import colored
+import logging
 
 class AsciiArtGenerator:
     def __init__(self):
@@ -18,6 +19,7 @@ class AsciiArtGenerator:
             return art.text2art(text, font=font_name)
         except Exception as e:
             print(f"Помилка: {e}")
+            logging.info("ERROR" + {e})
             return art.text2art(text, font='block')
 
     def get_color(self):
@@ -29,6 +31,7 @@ class AsciiArtGenerator:
             width = int(input("Введіть ширину ASCII-арту: "))
             height = int(input("Введіть висоту ASCII-арту: "))
         except ValueError:
+            logging.info("ERROR in value")
             width, height = 80, 20
         return width, height
 
@@ -54,6 +57,10 @@ class AsciiArtGenerator:
 
         print("Дякуємо за використання нашого генератора ASCII-арту!")
 
-if __name__ == "__main__":
+def main():
     generator = AsciiArtGenerator()
     generator.run()
+
+
+if __name__ == "__main__":
+    main()
