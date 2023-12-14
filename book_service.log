@@ -1,8 +1,0 @@
-2023-12-08 13:27:50,754: DEBUG - Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
-2023-12-08 13:27:50,895: DEBUG - https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
-2023-12-08 13:29:39,283: DEBUG - Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
-2023-12-08 13:29:39,381: DEBUG - https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
-2023-12-08 13:31:48,962: DEBUG - Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
-2023-12-08 13:31:49,068: DEBUG - https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
-2023-12-08 13:34:28,108: DEBUG - Starting new HTTPS connection (1): jsonplaceholder.typicode.com:443
-2023-12-08 13:34:28,213: DEBUG - https://jsonplaceholder.typicode.com:443 "GET /posts HTTP/1.1" 200 None
